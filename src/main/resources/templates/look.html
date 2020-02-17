@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://getbootstrap.com/docs/4.0/examples/dashboard/ -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>管理系统主页</title>
+    <!-- Bootstrap core CSS -->
+    <link  rel="stylesheet" href="asserts/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/4.2.1/css/bootstrap.css}" >
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="asserts/css/dashboard.css" th:href="@{/asserts/css/dashboard.css}"  >
+    <style type="text/css">
+        /* Chart.js */
+        @-webkit-keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        .chartjs-render-monitor {
+            -webkit-animation: chartjs-render-animation 0.001s;
+            animation: chartjs-render-animation 0.001s;
+        }
+    </style>
+</head>
+
+<body>
+<!--引入抽取的topbar-->
+<div th:replace="dashboard :: topbar"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div th:replace="dashboard :: sidebar (activeUri='lists')"></div>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+          <form>
+<!--                <div class="form-group">-->
+<!--                    <label>姓名：</label>-->
+<!--                    <input  type="text" name="name" class="form‐control" placeholder=""th:value="${sure.oldname}">-->
+<!--                    <label>性别：</label>-->
+<!--                    <input  type="text" name="sex" class="form‐control" placeholder="" th:value="${sure.oldsex}">-->
+<!--                    <label>年龄：</label>-->
+<!--                    <input  type="text" name="age" class="form‐control" placeholder="" th:value="${sure.oldage}">-->
+
+<!--                </div>-->
+<!--                <div class="form-group">-->
+
+
+<!--                <label>联系方式：</label>-->
+<!--                <input  class="form-control" type="text" placeholder="手机号码" th:value="${sure.oldphone}"  >-->
+
+
+<!--               </div>-->
+<!--                <div class="form-group">-->
+<!--                <label>病历：</label>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <textarea class="form-control"  type="text" rows="3" th:text="${sure.oldbingli}" ></textarea>-->
+<!--&lt;!&ndash;                <input  class="form-control" type="text" placeholder="身体健康" th:value="${sure.oldbingli}">&ndash;&gt;-->
+
+<!--            </div>-->
+<!--                <div >-->
+<!--                <label>家庭住址：</label>-->
+<!--                <input  class="form-control" type="text" placeholder="*省*市*县*小区*栋*单元*号" th:value="${sure.oldaddress}" >-->
+
+<!--            </div>-->
+<!--                <div class="form-group">-->
+<!--                <label>紧急联系人：</label>-->
+<!--                <input class="form-control" type="text" name="people"  placeholder="手机号" th:value="${sure.oldpeople}">-->
+
+<!--            </div>-->
+<!--            <div>-->
+<!--                <label>紧急联系医院：</label>-->
+<!--                <select class="form-control">-->
+<!--                    <option>北京</option>-->
+<!--                    <option>天津</option>-->
+<!--                    <option>上海</option>-->
+<!--                    <option>广州</option>-->
+<!--                    <option>深圳</option>-->
+<!--                </select>-->
+
+<!--            </div>-->
+              <div class="table-responsive">
+                  <table class="table table-striped table-sm">
+                      <thead>
+                      <tr>
+                          <th>用户ID</th>
+                          <th>账号</th>
+                          <th>密码</th>
+                          <th>用户名</th>
+                          <th>用户生日</th>
+                          <th>邮件</th>
+                          <th>联系电话</th>
+                          <th>礼物积分</th>
+                          <th>课时</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr th:each="ls : ${list}">
+                          <td th:text="${ls.userid}"></td>
+                          <td th:text="${ls.phonenumber}"></td>
+                          <td th:text="${ls.password}"></td>
+                          <td th:text="${ls.username}"></td>
+                          <td th:text="${ls.birthday}"></td>
+                          <td th:text="${ls.email}"></td>
+                          <td th:text="${ls.spare_phonenumber}"></td>
+                          <td th:text="${ls.giftcardnumber}"></td>
+                          <td th:text="${ls.classhour}"></td>
+
+                          <td>
+                              <a class="btn btn-sm btn-primary"  >修改</a>
+                              <!--th:href="@{/emp/}+${emp.studentFamilyContact1}-->
+                              <!--<from th:action="@{/emp/}+${emp.studentFamilyContact1}" method="delete">-->
+                              <!--<input tape="hidden" name="_method" value="delete"/>-->
+                              <button tape="submit" class="btn btn-sm btn-danger">删除</button>
+
+                          </td>
+
+                      </tr>
+                      </tbody>
+                  </table>
+              </div>
+
+             <div>
+
+       <a class="btn btn-lg btn-info"  th:href="@{/emp}">返回</a>
+            </div>
+
+            </form>
+
+
+
+
+        </main>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="asserts/js/jquery-3.2.1.slim.min.js" ></script>
+<script type="text/javascript" src="asserts/js/popper.min.js" ></script>
+<script type="text/javascript" src="asserts/js/bootstrap.min.js" ></script>
+
+<!-- Icons -->
+<script type="text/javascript" src="asserts/js/feather.min.js" ></script>
+<script>
+    feather.replace()
+</script>
+
+<!-- Graphs -->
+<script type="text/javascript" src="asserts/js/Chart.min.js" ></script>
+<script>
+    var ctx = document.getElementById("myChart");
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            datasets: [{
+                data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+                lineTension: 0,
+                backgroundColor: 'transparent',
+                borderColor: '#007bff',
+                borderWidth: 4,
+                pointBackgroundColor: '#007bff'
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: false
+                    }
+                }]
+            },
+            legend: {
+                display: false,
+            }
+        }
+    });
+</script>
+
+</body>
+
+</html>

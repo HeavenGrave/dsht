@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>电商管理平台注册</title>
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.css" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.css}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+</head>
+<body class="text-center">
+<form  action="/doregister" >
+
+    <div class="form-group">
+<!--        <br class="col-auto">-->
+        <label>用户名称：</label>
+        <input type="text"  id="username" placeholder="用户名称"
+               name="username" required></div>
+    <div class="form-group">
+        <label >登录密码：</label><input type="password" id="password"
+                                  placeholder=" 密码" required name="password">
+    </div>
+    <div class="form-group">
+        <label >确认密码：</label><input type="password"  id="password2"
+                                  placeholder=" 确认密码" required name="password2">
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">同意协议并注册</button>
+    <div>
+        <span>已有账号去</span><a href="/login">登录</a>
+    </div>
+
+</form>
+
+</body>
+</html>
