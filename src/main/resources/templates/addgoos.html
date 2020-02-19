@@ -48,8 +48,9 @@
     <div class="row">
         <div th:replace="dashboard :: sidebar (activeUri='glist')"></div>
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-            <form>
 
+            <form>
+                <a class="btn btn-sm btn-success" th:href="@{/addg}">商品添加</a>
                 <div class="table-responsive">
                     <table class="table table-striped table-sm">
                         <thead>
@@ -78,13 +79,14 @@
 
                             <td>
 <!--                                <a class="btn btn-sm btn-primary"  >修改</a>-->
-<!--                                <a class="btn btn-sm btn-primary"  >修改</a>-->
-                               <button tape="submit" class="btn btn-sm btn-primary" th:href="@{/gadd}">修改</button>
-                                <!--th:href="@{/emp/}+${emp.studentFamilyContact1}-->
-<!--                                <from th:action="@{/emp/}+${emp.studentFamilyContact1}" method="delete">-->
-<!--                                <input tape="hidden" name="_method" value="delete"/>-->
-                                <button tape="submit" class="btn btn-sm btn-danger"th:href="@{/gadd/}+${ls.goodsid}">删除</button>
 
+                               <a class="btn btn-sm btn-primary" th:href="@{/add/}+${ls.goodsid}">修改</a>
+                                <!--th:href="@{/emp/}+${emp.studentFamilyContact1}-->
+                                <!--<from th:action="@{/dl/}+${ls.goodsid}" method="post">-->
+                                <!--<input tape="hidden" name="_method" value="delete"/>-->
+                                <!--<button tape="submit" class="btn btn-sm btn-danger">删除</button>-->
+                                <button class="btn btn-sm btn-danger"th:href="@{/dl/}+${ls.goodsid}">删除</button>
+                                </from>
                             </td>
 
                         </tr>

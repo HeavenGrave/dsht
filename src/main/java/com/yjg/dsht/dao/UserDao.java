@@ -19,4 +19,5 @@ public interface UserDao extends JpaRepository<User, Long> {
     @Query(value = "select * from db_dianshang.user where userid=(select max(userid) from db_dianshang.user)",nativeQuery =true)
 //    @Query(value = "select * from db_dianshang.user where userid='1'",nativeQuery =true)
     User getMaxUseridUser();
+
 }

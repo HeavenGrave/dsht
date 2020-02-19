@@ -11,7 +11,7 @@ import javax.persistence.Id;
 public class Goods {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  Integer goodsid;
+    private  Long goodsid;
     private  String goodsname;
     private  String goodsprice;
     private  String goodsfakeprice;
@@ -19,11 +19,11 @@ public class Goods {
     private  String goodsdesc;
     private  String goodsimgurl;
 
-    public Integer getGoodsid() {
+    public Long getGoodsid() {
         return goodsid;
     }
 
-    public void setGoodsid(Integer goodsid) {
+    public void setGoodsid(Long goodsid) {
         this.goodsid = goodsid;
     }
 

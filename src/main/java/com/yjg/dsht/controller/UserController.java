@@ -44,7 +44,17 @@ public class UserController {
 
         return "login";
     }
+    /**
+     * 删除请求
+     *
+     * @return
+     */
 
+    @RequestMapping("/userdelete")
+    public String userdelete() {
+
+        return "look";
+    }
     /**
      * 主页面
      *
